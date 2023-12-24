@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT-3</title>
+    <style>
+        body{
+            text-align: center;
+            margin:30px;
+        }
+        input{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Power Calculator</h2>
+        <label>Enter Voltage :</label>
+        <input type="number" min="1" id="vol">
+        <br>
+        <label>Enter Current :</label>
+        <input type="number" min="1" id="cur">
+        <br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <h3 id="output"></h3>
+    <script>
+       function calculate(){
+          const v=parseInt(document.getElementById("vol").value);
+          const c=parseInt(document.getElementById("cur").value);
+          const pow=v*c;
+          document.getElementById("output").innerHTML=`Power : ${pow}`;
+       }
+    </script>
+</body>
+</html>

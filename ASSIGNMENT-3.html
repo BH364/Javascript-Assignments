@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT-3</title>
+     <style>
+        body{
+            text-align: center;
+        }
+     </style>
+</head>
+<body>
+    <form>
+        <h2>Matchstick Houses</h2>
+        <label>Enter the step number :</label>
+        <input type="number" min="0" id="num">
+        <button type="button" onclick="noOfSteps()">Calculate</button>
+    </form>
+    <h3 id="output"></h3>
+    <script>
+        function noOfSteps(){
+          const n=parseInt(document.getElementById("num").value);
+          const ans=count(n);
+          document.getElementById("output").innerHTML=`The number of sticks required are ${ans}`;
+        }
+        function count(n){
+            if(n===0){
+                return 0;
+            }
+            else if(n===1){
+                return 6;
+            }
+            else{
+                const sticks=6+((n-1)*5)
+                return sticks;
+            }
+           
+        }
+    </script>
+</body>
+</html>

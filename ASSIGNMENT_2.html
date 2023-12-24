@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT-2</title>
+    <style>
+        body{
+          margin: 20px;
+          padding:10px;
+          display: inline-flexbox;
+          text-align: center;
+
+        }
+        input{
+            margin:10px;
+        }
+        h3{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Tile Teamwork Tactics</h2>
+        <label>Enter Your Position a:</label>
+        <input type="number" min="1" id="a">
+        <br>
+        <label>Enter Your Friend Position b:</label>
+        <input type="number" min="1" id="b">
+        <br>
+        <button type="button" onclick="team()">Calculate</button>
+    </form>
+    <h3 id="output"></h3>
+    <script>
+        function team(){
+           const a=parseInt(document.getElementById("a").value);
+           const b=parseInt(document.getElementById("b").value);
+           const ans=isvalid(a,b);
+           document.getElementById("output").innerHTML=`Can I reach my friend??? ${ans}`;
+        }
+        function isvalid(a,b){
+          for(let i=1;i<=6;i++){
+            if(a===b){
+                return true;
+            }
+            if((a+i)===b){
+                return true;
+            }
+            
+          }
+          return false;
+        }
+    </script>
+
+</body>
+</html>

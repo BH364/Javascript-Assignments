@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-1</title>
+</head>
+<body>
+    <form>
+        <h2>Tower Of Hanoi</h2>
+        <label>Enter n: </label>
+        <input type="number" id="num" required min="1">
+
+        <button type="button" id="mybtn" onclick="getans()">Click</button>
+
+    </form>
+    <p id="output"></p>
+
+    <script>
+        function getans(){
+            const n=parseInt(document.getElementById("num").value);
+            const ans=towerOf(n);
+            document.getElementById("output").innerHTML=`The minimum number of steps required are ${ans}`;
+
+        
+        }
+          
+          function towerOf(n){
+           if(n<=0){
+               return 0;
+           }
+           else{
+              return Math.pow(2,n)-1;
+              
+           }
+        }
+
+        </script>
+
+</body>
+</html>
